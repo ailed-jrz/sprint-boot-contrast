@@ -1,0 +1,17 @@
+version: "3.2"
+services:
+  sprint-boot-contrast:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: "sprint-boot-contrast"
+    image: sprint-boot-contrast:latest
+    environment:
+      - START_WITH_CONTRAST=${START_WITH_CONTRAST}
+    volumes:
+      - ./output/logs:/app/logs
+    networks:
+      - back-tier
+networks:
+  back-tier:
+    driver: bridge

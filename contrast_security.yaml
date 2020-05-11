@@ -1,0 +1,23 @@
+application:
+  group: "SPRINT (IMAP DJF-000002)"
+  tags: F&O,BCV3,DJF-000002,Cost
+  metadata: bU="Finance and Operations"
+
+server:
+  name: "dpydalsprd101.sl.bluecloud.ibm.com"
+  path: /data/
+  environment: qa
+  tags: F&O,BCV3,DJF-000002,Cost
+
+agent:
+  logger:
+    path: /app/logs/contrast.log
+    level: debug
+    roll_daily: true
+    backups: 5
+  security_logger:
+    path: app/logs/security.log
+    roll_daily: true
+    backups: 5
+  java:
+    standalone_app_name: "File Generator"
